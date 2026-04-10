@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ===================================================
@@ -31,8 +32,12 @@
       --font-body:    'DM Sans', sans-serif;
       --radius:     14px;
       --radius-sm:  8px;
+      --font-primary: 'Poppins', sans-serif;
       --transition: 0.3s cubic-bezier(0.22,1,0.36,1);
     }
+    * {
+  font-family: 'Poppins', sans-serif !important;
+}
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -319,17 +324,32 @@ header .container {
 }
 
 .video-content {
+  max-width: 760px;
+  margin: 28px auto 0;
   text-align: center;
-  margin-top: 28px;
 }
 
 .video-tag {
   display: inline-block;
-  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid rgba(255,74,24,0.25);
+  border-radius: 100px;
+  padding: 3px 12px;
+  margin-bottom: 16px;
 }
 
 .video-title {
-  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--off-white);
+  margin-bottom: 14px;
 }
 
     /* VIDEO BLOCK — fácil de substituir por <video> ou <iframe> no futuro */
@@ -342,9 +362,7 @@ header .container {
   border: 1px solid var(--border-strong);
   background: #000;
   aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
 .video-wrapper video {
@@ -387,13 +405,13 @@ header .container {
       color: var(--off-white);
       margin-bottom: 10px;
     }
-    .video-subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
+.video-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
     /* ===================================================
        SECTION HEADER (reusável)
     =================================================== */
@@ -850,34 +868,25 @@ header .container {
        por <video> ou <iframe> e remova o .video-inner placeholder.
   ======================================================== -->
 <section id="video-placeholder">
-    <div class="container">
+  <div class="container">
 
-      <!-- VIDEO WRAPPER — substitua este bloco por vídeo real quando disponível -->
-<div class="video-wrapper fade-up">
-  <video controls autoplay muted playsinline preload="metadata">
-    <source src="https://gsdt2kusgw2pnznr.public.blob.vercel-storage.com/agradecimento.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
-</div>
-  </div>
-</div>
-
-<div class="video-content fade-up">
-  <div class="video-tag">Em breve</div>
-  <h2 class="video-title">Uma mensagem rápida do nosso time</h2>
-  <p class="video-subtitle">
-    Estamos preparando um vídeo de boas-vindas para te explicar o que esperar do seu diagnóstico comercial.
-  </p>
-</div>
-        </div>
-      </div>
-      <!-- /VIDEO WRAPPER -->
-
+    <div class="video-wrapper fade-up">
+      <video controls autoplay muted playsinline preload="metadata">
+        <source src="https://gsdt2kusgw2pnznr.public.blob.vercel-storage.com/agradecimento.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
     </div>
-  </section>
 
+    <div class="video-content fade-up">
+      <div class="video-tag">Mensagem do time</div>
+      <h2 class="video-title">Assista antes do nosso contato</h2>
+      <p class="video-subtitle">
+        Em menos de 1 minuto você vai entender como funciona o diagnóstico e como tirar o máximo dessa conversa.
+      </p>
+    </div>
 
-
+  </div>
+</section>
   <!-- ========================================================
        SECTION 3 — ESPECIALISTAS / SDRS
        Adicione, remova ou troque os cards conforme necessário.
