@@ -102,28 +102,66 @@ header {
   top: 0;
   z-index: 100;
   padding: 0 32px;
-  height: 92px;
+  height: 96px;
   display: flex;
   align-items: center;
-  background: rgba(12,15,18,0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(8, 11, 14, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.22);
 }
-    header .container {
-      width: 100%;
-      max-width: 1080px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+
+header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,74,24,0.00) 15%,
+    rgba(255,74,24,0.25) 50%,
+    rgba(255,74,24,0.00) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+header .container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 10px 14px 10px 10px;
+  border-radius: 18px;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-wrap:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 22px rgba(255,74,24,0.22);
+}
+
 .logo-icon {
   width: 44px;
   height: 44px;
@@ -132,32 +170,54 @@ header {
 }
 
 .logo-wordmark {
-  font-family: var(--font-display);
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  color: var(--off-white);
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  color: #F5F4EF;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+}
+
+.logo-wordmark span {
+  color: #F5F4EF;
+  opacity: 0.92;
 }
 
 .header-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--orange-dim);
-  border: 1px solid rgba(255,74,24,0.25);
-  border-radius: 100px;
-  padding: 8px 18px;
+  gap: 10px;
+  min-height: 44px;
+  background: linear-gradient(180deg, rgba(255,74,24,0.14) 0%, rgba(255,74,24,0.08) 100%);
+  border: 1px solid rgba(255,74,24,0.24);
+  border-radius: 999px;
+  padding: 0 18px;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--orange);
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  color: #FF6A3D;
+  letter-spacing: 0.01em;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-    .header-badge .dot {
-      width: 6px; height: 6px;
-      background: var(--orange);
-      border-radius: 50%;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
+
+.header-badge:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255,74,24,0.4);
+  box-shadow: 0 10px 28px rgba(255,74,24,0.10);
+}
+
+.header-badge .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255,74,24,0.12);
+  animation: pulse-dot 2s ease-in-out infinite;
+} 
     @keyframes pulse-dot {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.7); }
@@ -920,10 +980,10 @@ header {
       <div class="btn-group fade-up">
 
         <!-- LINK INSTAGRAM: substitua # pelo link real do Instagram da Sellfy Group -->
-        <a href="" target="_blank" rel="noopener" class="btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          </svg>
+<a href="https://wa.me/558589989773?text=Quero%20fazer%20um%20diagn%C3%B3stico%20da%20minha%20opera%C3%A7%C3%A3o%20comercial%20e%20entender%20como%20vender%20com%20mais%20previsibilidade." 
+   target="_blank" 
+   rel="noopener" 
+   class="btn-primary">
           Quero meu diagnóstico agora!
         </a>
 
