@@ -342,18 +342,16 @@ header .container {
   border: 1px solid var(--border-strong);
   background: #000;
   aspect-ratio: 16 / 9;
-
-  display: block; /* remove flex */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  display: none;
 }
 .video-inner {
-  display: none;
+  display: block;
 }
 
     .video-play-icon {
@@ -856,10 +854,13 @@ header .container {
 
       <!-- VIDEO WRAPPER — substitua este bloco por vídeo real quando disponível -->
 <div class="video-wrapper fade-up">
-  <video controls autoplay muted playsinline>
-    <source src="./agradecimento.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo.
-  </video>
+  <div class="video-inner">
+    <div class="video-play-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FF4A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </div>
+  </div>
 </div>
 
 <div class="video-content fade-up">
