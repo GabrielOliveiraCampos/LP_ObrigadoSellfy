@@ -348,9 +348,9 @@ header .container {
 }
 
 .video-wrapper video {
-  display: none;
-}
-.video-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -854,12 +854,11 @@ header .container {
 
       <!-- VIDEO WRAPPER — substitua este bloco por vídeo real quando disponível -->
 <div class="video-wrapper fade-up">
-  <div class="video-inner">
-    <div class="video-play-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#FF4A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-      </svg>
-    </div>
+  <video controls autoplay muted playsinline preload="metadata">
+    <source src="https://gsdt2kusgw2pnznr.public.blob.vercel-storage.com/agradecimento.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+</div>
   </div>
 </div>
 
